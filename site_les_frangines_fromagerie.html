@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Les Frangines Fromagerie à Castelginest : fromages, conseils et plaisirs gourmands.">
+  <title>Les Frangines — Fromagerie à Castelginest</title>
+  <style>
+    :root {
+      --cream: #f8f3e9;
+      --paper: #fffdf8;
+      --green: #344b3b;
+      --green-light: #e7ecdf;
+      --orange: #c8753d;
+      --ink: #292b25;
+      --muted: #6e7067;
+      --line: #e8dfd0;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .topbar {
+      background: var(--green);
+      color: #fff;
+      text-align: center;
+      padding: 8px 16px;
+      font: 13px/1.4 Arial, sans-serif;
+      letter-spacing: .04em;
+    }
+    header {
+      background: var(--cream);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav {
+      max-width: 1120px;
+      margin: auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      text-decoration: none;
+      color: var(--green);
+      font-size: 25px;
+      font-weight: bold;
+      line-height: 1.05;
+    }
+    .brand small {
+      display: block;
+      margin-top: 5px;
+      font: 10px Arial, sans-serif;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+    nav { display: flex; gap: 25px; align-items: center; }
+    nav a {
+      text-decoration: none;
+      font: 14px Arial, sans-serif;
+      color: var(--green);
+    }
+    nav a:hover { color: var(--orange); }
+    .nav-cta, .button {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--orange);
+      color: white;
+      padding: 12px 19px;
+      border-radius: 3px;
+      font: bold 13px Arial, sans-serif;
+      letter-spacing: .03em;
+    }
+    .hero {
+      background: linear-gradient(90deg, rgba(34,49,37,.82), rgba(34,49,37,.25)),
+        url("https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&w=2000&q=85") center/cover;
+      color: white;
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+    }
+    .hero-inner { width: min(1120px, 100%); margin: auto; padding: 85px 24px; }
+    .eyebrow {
+      font: bold 12px Arial, sans-serif;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #f0c69f;
+    }
+    h1 { font-size: clamp(42px, 6vw, 72px); line-height: 1.04; max-width: 680px; margin: 18px 0; }
+    .hero p { max-width: 530px; font-size: 19px; color: #f7f2e9; }
+    .hero .button { margin-top: 16px; }
+    section { padding: 78px 24px; }
+    .container { max-width: 1080px; margin: auto; }
+    .intro { text-align: center; max-width: 760px; margin: auto; }
+    .section-tag {
+      color: var(--orange);
+      font: bold 11px Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+    }
+    h2 { color: var(--green); font-size: clamp(31px, 4vw, 43px); line-height: 1.15; margin: 12px 0 18px; }
+    .intro p { color: var(--muted); font-size: 17px; }
+    .values {
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 42px;
+    }
+    .value {
+      background: var(--paper);
+      padding: 28px 25px;
+      text-align: center;
+      border: 1px solid var(--line);
+    }
+    .value .symbol { font-size: 30px; }
+    .value h3 { color: var(--green); margin: 8px 0; font-size: 21px; }
+    .value p { margin: 0; color: var(--muted); font: 14px/1.6 Arial, sans-serif; }
+    .products { background: var(--paper); }
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 35px; }
+    .product {
+      background: white;
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+    .product img { width: 100%; height: 215px; object-fit: cover; display: block; }
+    .product div { padding: 20px; }
+    .product h3 { color: var(--green); margin: 0 0 7px; font-size: 21px; }
+    .product p { color: var(--muted); margin: 0; font: 14px/1.6 Arial, sans-serif; }
+    .note { margin-top: 18px; font: 12px Arial, sans-serif; color: var(--muted); }
+    .visit { background: var(--green); color: white; }
+    .visit h2 { color: white; }
+    .visit .section-tag { color: #f0c69f; }
+    .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: center; }
+    .visit p { color: #e2e8df; }
+    .details { border-top: 1px solid rgba(255,255,255,.25); margin-top: 24px; padding-top: 18px; }
+    .details p { margin: 9px 0; }
+    .visit .button { background: #f0c69f; color: var(--green); margin-top: 12px; }
+    .map-placeholder {
+      min-height: 300px;
+      border: 1px solid rgba(255,255,255,.35);
+      background: linear-gradient(135deg, #526b55, #819078);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 25px;
+      color: white;
+    }
+    .map-placeholder span { font-size: 42px; }
+    footer { background: #25372b; color: #d9dfd6; padding: 25px 24px; text-align: center; font: 12px Arial, sans-serif; }
+    footer a { color: #f0c69f; }
+    @media (max-width: 760px) {
+      .nav { flex-wrap: wrap; }
+      nav { order: 3; width: 100%; justify-content: space-between; gap: 10px; }
+      nav a { font-size: 12px; }
+      .nav-cta { margin-left: auto; }
+      .hero { min-height: 500px; }
+      .values, .product-grid, .visit-grid { grid-template-columns: 1fr; }
+      section { padding: 58px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">FROMAGERIE À CASTELGINEST · CONSEILS & GOURMANDISE</div>
+  <header>
+    <div class="nav">
+      <a class="brand" href="#accueil">Les Frangines<small>Fromagerie</small></a>
+      <nav aria-label="Navigation principale">
+        <a href="#histoire">La fromagerie</a>
+        <a href="#selection">Notre sélection</a>
+        <a href="#contact">Nous trouver</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Nous contacter</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-inner">
+        <div class="eyebrow">Le plaisir du bon fromage</div>
+        <h1>De belles découvertes à partager.</h1>
+        <p>Bienvenue chez Les Frangines, votre fromagerie à Castelginest. Prenez le temps de découvrir, de choisir et de savourer.</p>
+        <a class="button" href="#selection">Découvrir la fromagerie</a>
+      </div>
+    </section>
+
+    <section id="histoire">
+      <div class="container">
+        <div class="intro">
+          <div class="section-tag">Bienvenue chez nous</div>
+          <h2>Le fromage, c'est encore meilleur quand on le partage.</h2>
+          <p>Les Frangines vous accueillent à Castelginest pour vous faire découvrir l'univers du fromage. Que vous prépariez un repas en famille, un apéritif entre amis ou une occasion spéciale, passez en boutique pour trouver de quoi vous régaler.</p>
+        </div>
+        <div class="values">
+          <article class="value">
+            <div class="symbol">🧀</div>
+            <h3>Le goût</h3>
+            <p>Une invitation à découvrir différentes familles de fromages et leurs saveurs.</p>
+          </article>
+          <article class="value">
+            <div class="symbol">♡</div>
+            <h3>Le conseil</h3>
+            <p>Une équipe à votre écoute pour vous aider à choisir selon vos envies.</p>
+          </article>
+          <article class="value">
+            <div class="symbol">🍇</div>
+            <h3>Le partage</h3>
+            <p>Des idées gourmandes pour composer vos plateaux et vos moments conviviaux.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="selection">
+      <div class="container">
+        <div class="intro">
+          <div class="section-tag">À découvrir en boutique</div>
+          <h2>Une sélection pour toutes les envies</h2>
+          <p>Voici quelques grandes familles de fromages à explorer. La sélection et les disponibilités sont à confirmer directement en magasin.</p>
+        </div>
+        <div class="product-grid">
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=900&q=80" alt="Assortiment de fromages">
+            <div><h3>Les incontournables</h3><p>Des fromages à retrouver pour composer un joli plateau à partager.</p></div>
+          </article>
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&w=900&q=80" alt="Sélection de fromages affinés">
+            <div><h3>Les fromages de caractère</h3><p>Des saveurs et des textures variées pour les amateurs de découvertes.</p></div>
+          </article>
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1505576399274-565b52d4ac71?auto=format&fit=crop&w=900&q=80" alt="Plateau gourmand à partager">
+            <div><h3>Les plateaux à partager</h3><p>Une idée conviviale pour vos repas, fêtes et moments entre amis.</p></div>
+          </article>
+        </div>
+        <p class="note">Photos d'illustration. Les produits présentés ne constituent pas une liste de stock ou de références confirmées.</p>
+      </div>
+    </section>
+
+    <section class="visit" id="contact">
+      <div class="container visit-grid">
+        <div>
+          <div class="section-tag">Rendez-nous visite</div>
+          <h2>À bientôt chez Les Frangines !</h2>
+          <p>Venez découvrir la fromagerie et demander conseil directement en boutique.</p>
+          <div class="details">
+            <p><strong>Adresse</strong><br>5 rue de l'Église, 31780 Castelginest</p>
+            <p><strong>Téléphone</strong><br><a href="tel:+33561355003">05 61 35 50 03</a></p>
+            <p><strong>Horaires</strong><br>À compléter avec les horaires exacts de la boutique.</p>
+          </div>
+          <a class="button" href="https://www.google.com/maps/search/?api=1&query=5+rue+de+l%27Eglise+31780+Castelginest" target="_blank" rel="noopener">Voir l'itinéraire</a>
+        </div>
+        <div class="map-placeholder">
+          <div><span>📍</span><h3>Au cœur de Castelginest</h3><p>5 rue de l'Église<br>31780 Castelginest</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Les Frangines — Fromagerie à Castelginest</p>
+    <p>Maquette de site web · Informations à vérifier avant publication</p>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
