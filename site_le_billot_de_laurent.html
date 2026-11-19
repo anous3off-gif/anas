@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Le Billot de Laurent, boucherie-charcuterie-traiteur à Castelginest. Viandes, charcuteries et préparations gourmandes.">
+  <title>Le Billot de Laurent | Boucherie à Castelginest</title>
+  <style>
+    :root{
+      --dark:#252a24;--green:#39483a;--cream:#f5f0e7;--paper:#fffdf9;
+      --red:#9b4636;--gold:#c79a55;--text:#292b27;--muted:#6d7069;--line:#e6ded1;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--text);font-family:Georgia,"Times New Roman",serif;line-height:1.6}
+    a{color:inherit}
+    .top{background:var(--dark);color:#f6eee2;text-align:center;padding:9px 15px;font:12px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+    header{background:var(--cream);position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line)}
+    .nav{max-width:1160px;margin:auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .logo{text-decoration:none;color:var(--green);font-size:25px;font-weight:bold;line-height:1.05}
+    .logo span{display:block;font:10px Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;margin-top:6px}
+    nav{display:flex;gap:26px;align-items:center}
+    nav a{text-decoration:none;color:var(--green);font:14px Arial,sans-serif}
+    nav a:hover{color:var(--red)}
+    .cta,.btn{display:inline-block;background:var(--red);color:white;text-decoration:none;padding:12px 19px;border-radius:3px;font:bold 13px Arial,sans-serif;letter-spacing:.03em}
+    .hero{
+      min-height:590px;display:flex;align-items:center;color:white;
+      background:linear-gradient(90deg,rgba(22,27,23,.86),rgba(22,27,23,.2)),
+      url("https://assets.justacote.com/photos_entreprises/boucherie-de-saint-germain-saint-germain-en-laye-62f0d60306b66.jpg") center/cover;
+    }
+    .hero-inner{width:min(1160px,100%);margin:auto;padding:90px 24px}
+    .eyebrow,.tag{font:bold 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+    h1{font-size:clamp(43px,6vw,76px);line-height:1.02;max-width:690px;margin:17px 0}
+    .hero p{max-width:550px;font-size:19px;color:#f5eee5}
+    .hero .btn{margin-top:16px;background:var(--gold);color:#252a24}
+    section{padding:78px 24px}
+    .container{max-width:1080px;margin:auto}
+    .intro{text-align:center;max-width:760px;margin:0 auto}
+    h2{color:var(--green);font-size:clamp(31px,4vw,44px);line-height:1.12;margin:12px 0 17px}
+    .intro p{color:var(--muted);font-size:17px}
+    .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center;margin-top:42px}
+    .story-grid img{width:100%;height:360px;object-fit:cover;border-radius:2px}
+    .story-grid h3{color:var(--green);font-size:27px;line-height:1.2;margin:0 0 12px}
+    .story-grid p{color:var(--muted)}
+    .qualities{background:var(--cream);display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
+    .quality{background:var(--paper);border:1px solid var(--line);padding:27px 23px;text-align:center}
+    .quality .icon{font-size:30px}
+    .quality h3{color:var(--green);font-size:20px;margin:8px 0}
+    .quality p{font:14px/1.6 Arial,sans-serif;color:var(--muted);margin:0}
+    .products{background:#fff}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+    .card{border:1px solid var(--line);background:var(--paper)}
+    .card img{display:block;width:100%;height:220px;object-fit:cover}
+    .card-content{padding:20px}
+    .card h3{margin:0 0 7px;color:var(--green);font-size:21px}
+    .card p{margin:0;color:var(--muted);font:14px/1.6 Arial,sans-serif}
+    .smallnote{font:12px Arial,sans-serif;color:var(--muted);margin-top:18px}
+    .contact{background:var(--green);color:white}
+    .contact h2{color:white}
+    .contact .tag{color:#e3bd82}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+    .contact p{color:#e3e8df}
+    .info{border-top:1px solid rgba(255,255,255,.25);margin-top:22px;padding-top:16px}
+    .info p{margin:10px 0}
+    .info a{color:#f2d5a7}
+    .contact .btn{background:#e3bd82;color:var(--dark);margin-top:12px}
+    .photo-box{min-height:320px;overflow:hidden}
+    .photo-box img{width:100%;height:320px;object-fit:cover}
+    footer{background:var(--dark);color:#d8ddd4;text-align:center;padding:25px 20px;font:12px Arial,sans-serif}
+    footer p{margin:5px}
+    @media(max-width:760px){
+      .nav{flex-wrap:wrap}.nav .cta{margin-left:auto}
+      nav{order:3;width:100%;justify-content:space-between;gap:9px}
+      nav a{font-size:12px}.hero{min-height:500px}
+      .story-grid,.qualities,.cards,.contact-grid{grid-template-columns:1fr}
+      section{padding:58px 20px}.story-grid img{height:270px}
+    }
+  </style>
+</head>
+<body>
+  <div class="top">Boucherie · Charcuterie · Traiteur — Castelginest</div>
+  <header>
+    <div class="nav">
+      <a class="logo" href="#accueil">Le Billot de Laurent<span>Artisan boucher · Castelginest</span></a>
+      <nav aria-label="Navigation principale">
+        <a href="#maison">La maison</a>
+        <a href="#produits">Nos produits</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="cta" href="tel:+33534432511">Nous appeler</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-inner">
+        <div class="eyebrow">Le goût du bon et du bien choisi</div>
+        <h1>La qualité et le plaisir à votre table.</h1>
+        <p>Bienvenue au Billot de Laurent, votre boucherie-charcuterie à Castelginest. Des produits sélectionnés avec soin et des conseils pour accompagner vos repas du quotidien comme vos grandes occasions.</p>
+        <a class="btn" href="#produits">Découvrir la boutique</a>
+      </div>
+    </section>
+
+    <section id="maison">
+      <div class="container">
+        <div class="intro">
+          <div class="tag">Une adresse de proximité</div>
+          <h2>Le savoir-faire boucher, le plaisir de partager.</h2>
+          <p>Artisan boucher à Castelginest, Laurent vous accueille au 2 rue Saint-Charles. La qualité des produits et du service est au cœur de l'esprit de la maison.</p>
+        </div>
+        <div class="story-grid">
+          <img src="https://cdt40.media.tourinsoft.eu/upload/489737343-1218895310241049-6648455314281103700-n.jpg" alt="Vitrine d'une boucherie avec viandes et charcuteries">
+          <div>
+            <h3>Des produits choisis avec attention</h3>
+            <p>La maison met à l'honneur des viandes d'origine locale ainsi que des produits sélectionnés avec soin.</p>
+            <p>Pour vos repas en famille, vos déjeuners entre amis ou vos événements, demandez conseil en boutique sur les produits et les quantités adaptés à vos envies.</p>
+          </div>
+        </div>
+        <div class="qualities">
+          <article class="quality"><div class="icon">🥩</div><h3>Boucherie</h3><p>Un choix de viandes et de découpes pour composer vos repas.</p></article>
+          <article class="quality"><div class="icon">🥓</div><h3>Charcuterie</h3><p>Des produits de charcuterie pour vos entrées, apéritifs et plateaux.</p></article>
+          <article class="quality"><div class="icon">🍲</div><h3>Traiteur</h3><p>Des préparations gourmandes pour vos repas et occasions spéciales.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="produits">
+      <div class="container">
+        <div class="intro">
+          <div class="tag">À retrouver en boutique</div>
+          <h2>De quoi régaler toutes les envies</h2>
+          <p>Découvrez quelques idées de produits et de préparations à demander au Billot de Laurent. La disponibilité varie selon les jours et les saisons.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <img src="https://cdt40.media.tourinsoft.eu/upload/489737343-1218895310241049-6648455314281103700-n.jpg" alt="Sélection de viandes dans une vitrine de boucherie">
+            <div class="card-content"><h3>Viandes</h3><p>Des pièces à choisir selon vos recettes, vos goûts et le nombre de convives.</p></div>
+          </article>
+          <article class="card">
+            <img src="https://ot-sommieres.com/_objects/tao_apidae/com/visuels/9606.jpg" alt="Assortiment de charcuteries artisanales">
+            <div class="card-content"><h3>Charcuteries</h3><p>Saucissons, pâtés et autres idées gourmandes pour vos plateaux et apéritifs.</p></div>
+          </article>
+          <article class="card">
+            <img src="https://www.lebourgetdulac.fr/medias/2019/12/Boucherie-du-Prieure-Le-Bourget-du-Lac.jpg" alt="Comptoir de boucherie et produits traiteur">
+            <div class="card-content"><h3>Préparations traiteur</h3><p>Renseignez-vous sur les préparations maison et les commandes pour vos occasions.</p></div>
+          </article>
+        </div>
+        <p class="smallnote">Photographies réelles d'autres boucheries, utilisées à titre d'illustration. Elles ne représentent pas nécessairement le magasin ni ses produits exacts.</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="tag">Nous rendre visite</div>
+          <h2>À bientôt au Billot de Laurent !</h2>
+          <p>Passez en boutique ou téléphonez pour obtenir un renseignement et vérifier la disponibilité d'un produit.</p>
+          <div class="info">
+            <p><strong>Adresse</strong><br>2 rue Saint-Charles, 31780 Castelginest</p>
+            <p><strong>Téléphone</strong><br><a href="tel:+33534432511">05 34 43 25 11</a></p>
+            <p><strong>Horaires indicatifs</strong><br>
+              Mardi, mercredi, vendredi et samedi : 8h–12h45 / 16h–19h30<br>
+              Jeudi : horaires à confirmer par téléphone<br>
+              Lundi et dimanche : fermé
+            </p>
+          </div>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=2+rue+Saint-Charles+31780+Castelginest" target="_blank" rel="noopener">Voir l'itinéraire</a>
+        </div>
+        <div class="photo-box">
+          <img src="https://assets.justacote.com/photos_entreprises/boucherie-de-saint-germain-saint-germain-en-laye-62f0d60306b66.jpg" alt="Intérieur d'une boucherie traditionnelle">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Le Billot de Laurent — Boucherie, charcuterie et traiteur à Castelginest</p>
+    <p>Maquette de site web · Photos d'illustration · Informations à valider par le commerçant</p>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
